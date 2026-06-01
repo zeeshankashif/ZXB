@@ -349,23 +349,23 @@ export default function App() {
       {/* =========================================================================
           HUD FOREGROUND NAVIGATION & BRAND (Immersive UI Style)
           ========================================================================= */}
-      <nav className="fixed top-0 left-0 w-full z-30 flex items-center justify-between px-6 md:px-12 py-6 md:py-8 pointer-events-none backdrop-blur-[2px]">
+      <nav className="fixed top-0 left-0 w-full z-30 flex items-center justify-between px-4 md:px-12 py-4 md:py-8 pointer-events-none backdrop-blur-[2px]">
         <div className="pointer-events-auto flex items-baseline space-x-2">
-          <span className="font-display text-xl md:text-2xl font-bold tracking-tighter text-white text-glow">ZEXAN</span>
-          <span className="font-mono text-[9px] md:text-[10px] uppercase tracking-[0.4em] opacity-60 text-cyan-400">// Series 01</span>
+          <span className="font-display text-lg md:text-2xl font-bold tracking-tighter text-white text-glow">ZEXAN</span>
+          <span className="font-mono text-[8px] md:text-[10px] uppercase tracking-[0.4em] opacity-60 text-cyan-400">// S-01</span>
         </div>
-        <div className="pointer-events-auto flex items-center space-x-4 md:space-x-8 text-[9px] md:text-[11px] uppercase tracking-widest opacity-85">
+        <div className="pointer-events-auto flex items-center space-x-3 md:space-x-8 text-[8px] md:text-[11px] uppercase tracking-widest opacity-85">
           <span className="text-cyan-400 font-bold border-b border-cyan-400/50 text-glow">Dossier</span>
-          <span className="opacity-50 text-white">Prototype S-01</span>
-          <div className="flex items-center gap-2 text-white opacity-100 font-mono text-[10px] py-1.5 px-3.5 bg-cyan-500/10 border border-cyan-400/40 rounded-md box-glow animate-pulse">
-            <Clock className="w-3.5 h-3.5 text-cyan-400" />
-            <span>UTC 18:18 // RUN</span>
+          <span className="hidden sm:inline opacity-50 text-white">Prototype S-01</span>
+          <div className="flex items-center gap-1.5 text-white opacity-100 font-mono text-[9px] md:text-[10px] py-1 px-2.5 bg-cyan-500/10 border border-cyan-400/40 rounded-md box-glow animate-pulse">
+            <Clock className="w-3 h-3 text-cyan-400" />
+            <span>UTC 18:18</span>
           </div>
         </div>
       </nav>
 
       {/* Decorative Frame */}
-      <div className="fixed inset-0 border-[12px] md:border-[20px] border-[#090a0f] pointer-events-none z-40"></div>
+      <div className="fixed inset-0 border-[6px] md:border-[20px] border-[#090a0f] pointer-events-none z-40"></div>
 
       {/* =========================================================================
           SCROLL CONTAINER (THE MULTI-SCENE DOM SEQUENCE)
@@ -379,7 +379,7 @@ export default function App() {
         {/* =========================================================================
             PAGE 1: THE COLLAPSED ASSEMBLY (0vh - 100vh)
             ========================================================================= */}
-        <section className="w-full h-screen flex flex-col justify-end p-8 md:p-24 relative overflow-hidden">
+        <section className="w-full h-screen flex flex-col justify-end p-6 md:p-24 relative overflow-hidden">
           {/* Gigantic ambient background display metadata typography */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden">
             <h2 className="sec1-background-text font-display font-bold text-[18vw] leading-none tracking-tighter text-cyan-400/[0.035] text-glow whitespace-nowrap uppercase">
@@ -387,31 +387,31 @@ export default function App() {
             </h2>
           </div>
 
-          <div className="sec1-content max-w-xl flex flex-col gap-5 relative z-10 pointer-events-auto">
-            <div className="inline-block px-3.5 py-1.5 border border-cyan-500/30 bg-cyan-500/10 rounded-full w-fit box-glow">
-              <span className="text-[9px] uppercase tracking-[0.2em] text-cyan-400 font-bold">Technical Breakdown // Series 01</span>
+          <div className="sec1-content max-w-xl flex flex-col gap-4 md:gap-5 relative z-10 pointer-events-auto text-center md:text-left items-center md:items-start mx-auto md:mx-0 w-full mb-4 sm:mb-8 text-balance">
+            <div className="inline-block px-3 py-1 md:px-3.5 md:py-1.5 border border-cyan-500/30 bg-cyan-500/10 rounded-full w-fit box-glow">
+              <span className="text-[8px] md:text-[9px] uppercase tracking-[0.2em] text-cyan-400 font-bold">Technical Breakdown // Series 01</span>
             </div>
 
-            <h1 className="font-display text-5xl md:text-7xl font-extralight tracking-tight leading-none text-white cursor-default">
+            <h1 className="font-display text-4xl sm:text-5xl md:text-7xl font-extralight tracking-tight leading-none text-white cursor-default">
               <span className="heading-hover-effect block text-white select-none">CORE</span> <span className="font-bold text-cyan-400 text-glow text-shadow-cyan transition-all duration-500 hover:text-glow-violet heading-hover-effect inline-block mt-1">EXPLOSION</span>
             </h1>
 
-            <p className="text-sm md:text-base text-zinc-300 font-light leading-relaxed max-w-md">
+            <p className="text-xs md:text-sm text-zinc-300 font-light leading-relaxed max-w-sm md:max-w-md">
               Witness the deconstruction of ZEXAN. Every component is hand-polished and aligned to micron-level precision within our orbital synthesis lab.
             </p>
 
-            <div className="flex items-center gap-3.5 pt-2 text-[10px] font-mono text-cyan-400/80 tracking-widest uppercase">
+            <div className="flex items-center gap-2 md:gap-3.5 pt-1 text-[8px] md:text-[10px] font-mono text-cyan-400/80 tracking-widest uppercase">
               <span>ORBIT DRIFT ACTIVE</span>
               <span className="text-zinc-700">//</span>
-              <span>MOUSE HOVER TO TILT ASSEMBLY</span>
+              <span>TILT DETECTED</span>
             </div>
 
             {/* Scroll Assist Hint */}
-            <div className="mt-8 flex items-center gap-3 animate-bounce">
-              <div className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-zinc-400">
-                <ArrowDown className="w-4 h-4 text-cyan-400" />
+            <div className="mt-3 sm:mt-6 flex items-center gap-2.5 animate-bounce">
+              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-zinc-400">
+                <ArrowDown className="w-3.5 h-3.5 text-cyan-400" />
               </div>
-              <span className="font-mono text-[10px] text-zinc-500 tracking-[0.2em] uppercase">
+              <span className="font-mono text-[8px] sm:text-[10px] text-zinc-500 tracking-[0.2em] uppercase">
                 SCROLL DOWN TO INITIATE DECONSTRUCTION
               </span>
             </div>
@@ -421,37 +421,37 @@ export default function App() {
         {/* =========================================================================
             PAGE 2: KINETIC DRIFT & ORBITING PERSPECTIVE (NEW)
             ========================================================================= */}
-        <section className="w-full h-screen flex items-center justify-start p-8 md:p-24 relative overflow-hidden">
-          <div className="sec2-content max-w-xl w-full flex flex-col gap-6 relative z-10 opacity-0 transform translate-y-[100px] pointer-events-auto">
-            <div className="flex flex-col gap-2">
-              <div className="inline-block px-3 py-1 border border-cyan-500/30 bg-cyan-500/5 rounded-full w-fit">
-                <span className="text-[9px] uppercase tracking-[0.2em] text-cyan-400 font-semibold">Gravity Compensation // 001</span>
+        <section className="w-full h-screen flex flex-col md:flex-row items-center justify-end md:justify-start p-6 md:p-24 relative overflow-hidden">
+          <div className="sec2-content max-w-lg w-full flex flex-col gap-3.5 md:gap-6 relative z-10 opacity-0 transform translate-y-[100px] pointer-events-auto text-center md:text-left items-center md:items-start mb-6 md:mb-0">
+            <div className="flex flex-col gap-1.5 items-center md:items-start text-balance">
+              <div className="inline-block px-2.5 py-0.5 md:px-3 md:py-1 border border-cyan-500/30 bg-cyan-500/5 rounded-full w-fit">
+                <span className="text-[8px] md:text-[9px] uppercase tracking-[0.2em] text-cyan-400 font-semibold">Gravity Compensation // 001</span>
               </div>
-              <h2 className="heading-hover-effect font-display text-3xl md:text-5xl font-bold text-white tracking-tight w-fit">
+              <h2 className="heading-hover-effect font-display text-2xl sm:text-3xl md:text-5xl font-bold text-white tracking-tight text-center md:text-left">
                 Gravity-Isolated Tourbillon
               </h2>
             </div>
 
-            <p className="text-xs md:text-sm text-zinc-400 font-light leading-relaxed">
+            <p className="text-xs md:text-sm text-zinc-400 font-light leading-relaxed max-w-sm md:max-w-md text-balance">
               To offset physical gravitational influence, our dual-axis micro-regulating escapement floats in zero-friction suspension. This guarantees perfect chronometric drift containment in extreme environments.
             </p>
 
             {/* Micro stats deck */}
-            <div className="grid grid-cols-3 gap-4 pt-4 pointer-events-auto">
-              <div className="p-4 border border-white/5 bg-white/[0.01] rounded-xl flex flex-col gap-1">
-                <Compass className="w-4 h-4 text-cyan-400 mb-1" />
-                <span className="text-[10px] text-zinc-500 font-mono uppercase">System Friction</span>
-                <span className="text-sm font-semibold text-white font-display">0.00 % DET</span>
+            <div className="grid grid-cols-3 gap-2.5 sm:gap-4 pt-1 sm:pt-4 pointer-events-auto w-full">
+              <div className="p-2.5 sm:p-4 border border-white/5 bg-white/[0.01] rounded-xl flex flex-col items-center md:items-start gap-0.5">
+                <Compass className="w-3.5 sm:w-4 sm:h-4 text-cyan-400 mb-0.5" />
+                <span className="text-[8px] sm:text-[10px] text-zinc-500 font-mono uppercase text-center md:text-left leading-none">Friction</span>
+                <span className="text-[10px] sm:text-xs md:text-sm font-semibold text-white font-display text-center md:text-left">0.00 % DET</span>
               </div>
-              <div className="p-4 border border-white/5 bg-white/[0.01] rounded-xl flex flex-col gap-1">
-                <Activity className="w-4 h-4 text-cyan-400 mb-1" />
-                <span className="text-[10px] text-zinc-500 font-mono uppercase">Avg Deviation</span>
-                <span className="text-sm font-semibold text-white font-display">±0.01 s/Day</span>
+              <div className="p-2.5 sm:p-4 border border-white/5 bg-white/[0.01] rounded-xl flex flex-col items-center md:items-start gap-0.5">
+                <Activity className="w-3.5 sm:w-4 sm:h-4 text-cyan-400 mb-0.5" />
+                <span className="text-[8px] sm:text-[10px] text-zinc-500 font-mono uppercase text-center md:text-left leading-none">Deviation</span>
+                <span className="text-[10px] sm:text-xs md:text-sm font-semibold text-white font-display text-center md:text-left">±0.01s/D</span>
               </div>
-              <div className="p-4 border border-white/5 bg-white/[0.01] rounded-xl flex flex-col gap-1">
-                <Sliders className="w-4 h-4 text-cyan-400 mb-1" />
-                <span className="text-[10px] text-zinc-500 font-mono uppercase">Tension Angle</span>
-                <span className="text-sm font-semibold text-white font-display">0-G Vector</span>
+              <div className="p-2.5 sm:p-4 border border-white/5 bg-white/[0.01] rounded-xl flex flex-col items-center md:items-start gap-0.5">
+                <Sliders className="w-3.5 sm:w-4 sm:h-4 text-cyan-400 mb-0.5" />
+                <span className="text-[8px] sm:text-[10px] text-zinc-500 font-mono uppercase text-center md:text-left leading-none">Tension</span>
+                <span className="text-[10px] sm:text-xs md:text-sm font-semibold text-white font-display text-center md:text-left">0-G Vector</span>
               </div>
             </div>
           </div>
@@ -460,57 +460,57 @@ export default function App() {
         {/* =========================================================================
             PAGE 3: Z-AXIS DISPERSION (100vh - 200vh)
             ========================================================================= */}
-        <section className="w-full h-screen flex items-center justify-start p-8 md:p-24 relative overflow-hidden">
-          <div className="sec3-content max-w-xl w-full flex flex-col gap-6 relative z-10 opacity-0 transform translate-x-[-100px] pointer-events-auto">
-            <div className="flex flex-col gap-2">
-              <div className="inline-block px-3 py-1 border border-cyan-500/30 bg-cyan-500/5 rounded-full w-fit">
-                <span className="text-[9px] uppercase tracking-[0.2em] text-cyan-400 font-semibold">Interactive Deconstruction // 002</span>
+        <section className="w-full h-screen flex flex-col md:flex-row items-center justify-end md:justify-start p-6 md:p-24 relative overflow-hidden">
+          <div className="sec3-content max-w-lg w-full flex flex-col gap-3 md:gap-5 relative z-10 opacity-0 transform translate-x-[-100px] pointer-events-auto text-center md:text-left items-center md:items-start mb-6 md:mb-0">
+            <div className="flex flex-col gap-1.5 items-center md:items-start text-balance">
+              <div className="inline-block px-2.5 py-0.5 md:px-3 md:py-1 border border-cyan-500/30 bg-cyan-500/5 rounded-full w-fit">
+                <span className="text-[8px] md:text-[9px] uppercase tracking-[0.2em] text-cyan-400 font-semibold">Interactive Deconstruction // 002</span>
               </div>
-              <h2 className="heading-hover-effect font-display text-3xl md:text-5xl font-bold text-white tracking-tight w-fit">
+              <h2 className="heading-hover-effect font-display text-2xl sm:text-3xl md:text-5xl font-bold text-white tracking-tight">
                 Z-Axis Mechanical Dispersion
               </h2>
             </div>
 
-            <p className="text-xs md:text-sm text-zinc-400 font-light leading-relaxed">
+            <p className="text-[11px] md:text-sm text-zinc-400 font-light leading-relaxed max-w-sm md:max-w-md text-balance hidden sm:block">
               Explore the deconstructed layers. The gears, main dial plate, and sapphire crystal elements dynamically disperse on scroll speed and kinetic frequency.
             </p>
 
             {/* Spec Layer Selectors */}
-            <div className="flex flex-col gap-3.5 pointer-events-auto">
+            <div className="flex flex-col gap-2 sm:gap-3 pointer-events-auto w-full">
               {GEAR_SPECS.map((spec, index) => {
                 const isActive = activeSpecIndex === index;
                 return (
                   <div
                     key={spec.id}
                     onClick={() => setActiveSpecIndex(index)}
-                    className={`glass-panel p-4 md:p-5 rounded-xl cursor-pointer transition-all duration-300 border-l-[3px] flex items-start gap-4 ${
+                    className={`glass-panel p-2.5 sm:p-4 rounded-xl cursor-pointer transition-all duration-300 border-l-[3px] flex items-start gap-2.5 sm:gap-4 ${
                       isActive 
                         ? 'border-cyan-400 bg-white/[0.03] shadow-lg shadow-cyan-950/15'
                         : 'border-white/10 hover:border-white/30 hover:bg-white/[0.015]'
                     }`}
                   >
-                    <div className={`p-2 rounded-lg border transition-colors ${
+                    <div className={`p-1.5 sm:p-2 rounded-lg border transition-colors shrink-0 ${
                       isActive ? 'bg-cyan-950/45 border-cyan-400/40 text-cyan-300' : 'bg-white/5 border-white/10 text-zinc-500'
                     }`}>
-                      {index === 0 && <Layers className="w-4 h-4" />}
-                      {index === 1 && <Clock className="w-4 h-4" />}
-                      {index === 2 && <Cpu className="w-4 h-4" />}
+                      {index === 0 && <Layers className="w-3.5 h-3.5 sm:w-4 sm:h-4" />}
+                      {index === 1 && <Clock className="w-3.5 h-3.5 sm:w-4 sm:h-4" />}
+                      {index === 2 && <Cpu className="w-3.5 h-3.5 sm:w-4 sm:h-4" />}
                     </div>
                     
-                    <div className="flex-1 flex flex-col gap-1">
+                    <div className="flex-1 flex flex-col gap-0.5 text-left">
                       <div className="flex items-center justify-between">
-                        <span className="font-mono text-[9px] text-zinc-500 tracking-wider">
+                        <span className="font-mono text-[8px] sm:text-[9px] text-zinc-500 tracking-wider">
                           {spec.tag}
                         </span>
-                        <span className="font-mono text-[9px] text-cyan-400 font-semibold tracking-wide">
+                        <span className="font-mono text-[8px] sm:text-[9px] text-cyan-400 font-semibold tracking-wide">
                           {spec.metric}
                         </span>
                       </div>
-                      <h3 className="font-display font-medium text-sm text-white">
+                      <h3 className="font-display font-medium text-xs sm:text-sm text-white">
                         {spec.title}
                       </h3>
                       {isActive && (
-                        <p className="text-xs text-zinc-400 font-light mt-1 animate-fadeIn leading-relaxed">
+                        <p className="text-[10px] sm:text-xs text-zinc-400 font-light mt-0.5 animate-fadeIn leading-relaxed">
                           {spec.description}
                         </p>
                       )}
@@ -525,63 +525,63 @@ export default function App() {
         {/* =========================================================================
             PAGE 4: CARBIDE CARBON FORGE (NEW)
             ========================================================================= */}
-        <section className="w-full h-screen flex items-center justify-end p-8 md:p-24 relative overflow-hidden">
-          <div className="sec4-content max-w-xl w-full flex flex-col gap-6 relative z-10 opacity-0 transform translate-x-[100px] pointer-events-auto">
-            <div className="flex flex-col gap-2">
-              <div className="inline-block px-3 py-1 border border-cyan-500/30 bg-cyan-500/5 rounded-full w-fit">
-                <span className="text-[9px] uppercase tracking-[0.2em] text-cyan-400 font-semibold">Molecular Engineering // 003</span>
+        <section className="w-full h-screen flex flex-col md:flex-row items-center justify-end p-6 md:p-24 relative overflow-hidden">
+          <div className="sec4-content max-w-lg w-full flex flex-col gap-3 md:gap-5 relative z-10 opacity-0 transform translate-x-[100px] pointer-events-auto text-center md:text-left items-center md:items-start mb-6 md:mb-0">
+            <div className="flex flex-col gap-1.5 items-center md:items-start text-balance">
+              <div className="inline-block px-2.5 py-0.5 md:px-3 md:py-1 border border-cyan-500/30 bg-cyan-500/5 rounded-full w-fit">
+                <span className="text-[8px] md:text-[9px] uppercase tracking-[0.2em] text-cyan-400 font-semibold">Molecular Engineering // 003</span>
               </div>
-              <h2 className="heading-hover-effect font-display text-3xl md:text-5xl font-bold text-white tracking-tight w-fit">
+              <h2 className="heading-hover-effect font-display text-2xl sm:text-3xl md:text-5xl font-bold text-white tracking-tight">
                 Carbine Carbon Shell Synthesis
               </h2>
             </div>
 
-            <p className="text-xs md:text-sm text-zinc-400 font-light leading-relaxed">
+            <p className="text-[11px] md:text-sm text-zinc-400 font-light leading-relaxed max-w-sm md:max-w-md text-balance hidden sm:block">
               Our casings undergo zero-gravity sintering, fusing pulverized titanium atoms with synthetic diamond-crystalline matrices. This provides extraordinary structural density while maintaining microscopic weight advantages.
             </p>
 
             {/* Interactive Alloy Material Toggler */}
-            <div className="glass-panel p-5 rounded-2xl flex flex-col gap-4 pointer-events-auto">
-              <div className="flex items-center justify-between pb-2 border-b border-cyan-500/20">
-                <div className="flex items-center gap-2">
-                  <Wrench className="w-4 h-4 text-cyan-400 animate-pulse" />
-                  <span className="text-xs text-zinc-100 font-display font-semibold text-glow">Active Material Matrix</span>
+            <div className="glass-panel p-4 sm:p-5 rounded-2xl flex flex-col gap-3 sm:gap-4 pointer-events-auto w-full text-left">
+              <div className="flex items-center justify-between pb-1.5 sm:pb-2 border-b border-cyan-500/20">
+                <div className="flex items-center gap-1.5 sm:gap-2">
+                  <Wrench className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-cyan-400 animate-pulse" />
+                  <span className="text-[11px] sm:text-xs text-zinc-100 font-display font-semibold text-glow">Active Material Matrix</span>
                 </div>
-                <span className="font-mono text-[10px] text-cyan-400 font-semibold tracking-wide">SINTER DECK v9</span>
+                <span className="font-mono text-[8px] sm:text-[10px] text-cyan-400 font-semibold tracking-wide">SINTER DECK v9</span>
               </div>
 
-              <div className="grid grid-cols-2 gap-2.5">
+              <div className="grid grid-cols-2 gap-2 sm:gap-2.5">
                 <button
                   onClick={() => setAlloyType('carbine')}
-                  className={`px-4 py-3 rounded-xl font-display text-xs font-semibold cursor-pointer transition-all duration-300 text-left flex flex-col gap-1 border ${
+                  className={`px-3 py-2 sm:px-4 sm:py-3 rounded-xl font-display text-[10px] sm:text-xs font-semibold cursor-pointer transition-all duration-300 text-left flex flex-col gap-0.5 sm:gap-1 border ${
                     alloyType === 'carbine'
                       ? 'bg-cyan-950/30 border-cyan-400 text-cyan-300'
                       : 'bg-white/[0.01] border-white/10 text-zinc-400 hover:border-white/20'
                   }`}
                 >
-                  <span>Anthracite Carbine</span>
-                  <span className="text-[9px] font-mono opacity-60">S-Density: 4.85 g/cm³</span>
+                  <span className="truncate">Anthracite Carbine</span>
+                  <span className="text-[8px] sm:text-[9px] font-mono opacity-60">S-Density: 4.85 g/cm³</span>
                 </button>
 
                 <button
                   onClick={() => setAlloyType('composite')}
-                  className={`px-4 py-3 rounded-xl font-display text-xs font-semibold cursor-pointer transition-all duration-300 text-left flex flex-col gap-1 border ${
+                  className={`px-3 py-2 sm:px-4 sm:py-3 rounded-xl font-display text-[10px] sm:text-xs font-semibold cursor-pointer transition-all duration-300 text-left flex flex-col gap-0.5 sm:gap-1 border ${
                     alloyType === 'composite'
                       ? 'bg-cyan-950/30 border-cyan-400 text-cyan-300'
                       : 'bg-white/[0.01] border-white/10 text-zinc-400 hover:border-white/20'
                   }`}
                 >
-                  <span>Alacrite Composite</span>
-                  <span className="text-[9px] font-mono opacity-60">S-Density: 5.12 g/cm³</span>
+                  <span className="truncate">Alacrite Composite</span>
+                  <span className="text-[8px] sm:text-[9px] font-mono opacity-60">S-Density: 5.12 g/cm³</span>
                 </button>
               </div>
 
-              <div className="p-3 bg-white/[0.015] rounded-xl flex items-center gap-3 border border-white/5">
-                <Info className="w-4 h-4 text-cyan-400 shrink-0" />
-                <span className="text-[10px] md:text-xs text-zinc-400 font-light leading-normal">
+              <div className="p-2 sm:p-3 bg-white/[0.015] rounded-xl flex items-center gap-2.5 border border-white/5">
+                <Info className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+                <span className="text-[9px] sm:text-[10px] md:text-xs text-zinc-400 font-light leading-normal">
                   {alloyType === 'carbine' 
                     ? 'Engineered for tactical scratch containment. Replicating lunar shield structures with over 2,400 Vickers hardness scale properties.' 
-                    : 'Engineered for acoustic optimization. Dampens micro-escapement vibration echoes to keep frequencies pure.'}
+                    : 'Engineered for acoustic optimization. Dampens vibration echoes to keep micro-escapement frequencies pure.'}
                 </span>
               </div>
             </div>
@@ -591,32 +591,36 @@ export default function App() {
         {/* =========================================================================
             PAGE 5: MICRO-ESCAPEMENT MECHANICS (NEW)
             ========================================================================= */}
-        <section className="w-full h-screen flex items-center justify-start p-8 md:p-24 relative overflow-hidden">
-          <div className="sec5-content max-w-xl w-full flex flex-col gap-6 relative z-10 opacity-0 transform translate-y-[100px] pointer-events-auto">
-            <div className="flex flex-col gap-2">
-              <div className="inline-block px-3 py-1 border border-cyan-500/30 bg-cyan-500/5 rounded-full w-fit">
-                <span className="text-[9px] uppercase tracking-[0.2em] text-cyan-400 font-semibold">Pulse Calibration // 004</span>
+        <section className="w-full h-screen flex flex-col md:flex-row items-center justify-end md:justify-start p-6 md:p-24 relative overflow-hidden">
+          <div className="sec5-content max-w-lg w-full flex flex-col gap-3.5 md:gap-5 relative z-10 opacity-0 transform translate-y-[100px] pointer-events-auto text-center md:text-left items-center md:items-start mb-6 md:mb-0">
+            <div className="flex flex-col gap-1.5 items-center md:items-start text-balance">
+              <div className="inline-block px-2.5 py-0.5 md:px-3 md:py-1 border border-cyan-500/30 bg-cyan-500/5 rounded-full w-fit">
+                <span className="text-[8px] md:text-[9px] uppercase tracking-[0.2em] text-cyan-400 font-semibold">Pulse Calibration // 004</span>
               </div>
-              <h2 className="heading-hover-effect font-display text-3xl md:text-5xl font-bold text-white tracking-tight w-fit">
+              <h2 className="heading-hover-effect font-display text-2xl sm:text-3xl md:text-5xl font-bold text-white tracking-tight">
                 High-Frequency Ruby Orbitals
               </h2>
             </div>
 
-            <p className="text-xs md:text-sm text-zinc-400 font-light leading-relaxed">
+            <p className="text-xs md:text-sm text-zinc-400 font-light leading-relaxed max-w-sm md:max-w-md text-balance text-left sm:text-center md:text-left">
               At the center of our timepiece is a high-torque mechanical cluster pulsing at a rigid 32,800 beats per hour. Supported by 25 synthetically-grown ruby pivot rings, the escapement achieves unparalleled mechanical balance over a 72-hour period.
             </p>
 
             {/* Spec grid */}
-            <div className="grid grid-cols-2 gap-3.5 pt-2">
-              <div className="p-4 border border-white/5 bg-white/[0.02] rounded-xl">
-                <span className="text-[9px] uppercase tracking-wider text-cyan-400/80 font-mono block mb-1">Pulsing Rate</span>
-                <span className="text-xs font-semibold text-white font-display block">4.5 Hz Constant</span>
-                <span className="text-[9px] text-zinc-500 font-mono block mt-1">270,000 sub-pulses per hour</span>
+            <div className="grid grid-cols-2 gap-2.5 sm:gap-3.5 pt-1 w-full text-left">
+              <div className="p-3 sm:p-4 border border-white/5 bg-white/[0.02] rounded-xl flex flex-col justify-between">
+                <div>
+                  <span className="text-[8px] sm:text-[9px] uppercase tracking-wider text-cyan-400/80 font-mono block mb-0.5 sm:mb-1">Pulsing Rate</span>
+                  <span className="text-[11px] sm:text-xs font-semibold text-white font-display block">4.5 Hz Constant</span>
+                </div>
+                <span className="text-[8px] sm:text-[9px] text-zinc-500 font-mono block mt-1.5 leading-tight sm:leading-normal">270,000 sub-pulses / hour</span>
               </div>
-              <div className="p-4 border border-white/5 bg-white/[0.02] rounded-xl">
-                <span className="text-[9px] uppercase tracking-wider text-cyan-400/80 font-mono block mb-1">Escapement Core</span>
-                <span className="text-xs font-semibold text-white font-display block">Silicium Hairspring</span>
-                <span className="text-[9px] text-zinc-500 font-mono block mt-1">Anti-magnetic atomic grid</span>
+              <div className="p-3 sm:p-4 border border-white/5 bg-white/[0.02] rounded-xl flex flex-col justify-between">
+                <div>
+                  <span className="text-[8px] sm:text-[9px] uppercase tracking-wider text-cyan-400/80 font-mono block mb-0.5 sm:mb-1">Escapement Core</span>
+                  <span className="text-[11px] sm:text-xs font-semibold text-white font-display block">Silicium Hairspring</span>
+                </div>
+                <span className="text-[8px] sm:text-[9px] text-zinc-500 font-mono block mt-1.5 leading-tight sm:leading-normal font-light">Anti-magnetic atomic grid</span>
               </div>
             </div>
           </div>
@@ -625,57 +629,57 @@ export default function App() {
         {/* =========================================================================
             PAGE 6: CHRONOMETRIC METRICS (NEW)
             ========================================================================= */}
-        <section className="w-full h-screen flex items-center justify-start p-8 md:p-24 relative overflow-hidden">
-          <div className="sec6-content max-w-xl w-full flex flex-col gap-6 relative z-10 opacity-0 transform translate-y-[100px] pointer-events-auto">
-            <div className="flex flex-col gap-2">
-              <div className="inline-block px-3 py-1 border border-cyan-500/30 bg-cyan-500/5 rounded-full w-fit">
-                <span className="text-[9px] uppercase tracking-[0.2em] text-cyan-400 font-semibold">Sensor Interface // 005</span>
+        <section className="w-full h-screen flex flex-col md:flex-row items-center justify-end md:justify-start p-6 md:p-24 relative overflow-hidden">
+          <div className="sec6-content max-w-lg w-full flex flex-col gap-3 sm:gap-5 relative z-10 opacity-0 transform translate-y-[100px] pointer-events-auto text-center md:text-left items-center md:items-start mb-6 md:mb-0">
+            <div className="flex flex-col gap-1.5 items-center md:items-start text-balance">
+              <div className="inline-block px-2.5 py-0.5 md:px-3 md:py-1 border border-cyan-500/30 bg-cyan-500/5 rounded-full w-fit">
+                <span className="text-[8px] md:text-[9px] uppercase tracking-[0.2em] text-cyan-400 font-semibold">Sensor Interface // 005</span>
               </div>
-              <h2 className="heading-hover-effect font-display text-3xl md:text-5xl font-bold text-white tracking-tight w-fit">
+              <h2 className="heading-hover-effect font-display text-2xl sm:text-3xl md:text-5xl font-bold text-white tracking-tight">
                 Algorithmic Telemetry Metrics
               </h2>
             </div>
 
-            <p className="text-xs md:text-sm text-zinc-400 font-light leading-relaxed font-sans">
+            <p className="text-xs md:text-sm text-zinc-400 font-light leading-relaxed font-sans max-w-sm md:max-w-md text-balance hidden sm:block">
               Integrate with systemic micro-tracking models. Select your calibration frequency mode to regulate the dynamic compensation loop vectors.
             </p>
 
             {/* Interactive Telemetry controller */}
-            <div className="glass-panel p-5 rounded-2xl flex flex-col gap-4 pointer-events-auto">
-              <div className="flex items-center justify-between pb-1">
-                <div className="flex items-center gap-2">
-                  <Activity className="w-4 h-4 text-cyan-300 animate-pulse" />
-                  <span className="text-xs text-zinc-100 font-mono font-bold text-glow">Telemetry Active Calibration</span>
+            <div className="glass-panel p-3.5 sm:p-5 rounded-2xl flex flex-col gap-3 pointer-events-auto w-full text-left">
+              <div className="flex items-center justify-between pb-1 border-b border-white/5">
+                <div className="flex items-center gap-1.5 sm:gap-2">
+                  <Activity className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-cyan-400 animate-pulse" />
+                  <span className="text-[10px] sm:text-xs text-zinc-100 font-mono font-bold text-glow">Active Calibration</span>
                 </div>
-                <span className="text-[9px] text-cyan-400 font-mono uppercase tracking-widest font-bold text-glow">{calibrationMode}</span>
+                <span className="text-[8px] sm:text-[9px] text-cyan-400 font-mono uppercase tracking-widest font-bold text-glow">{calibrationMode}</span>
               </div>
 
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-col gap-1.5 sm:gap-2">
                 {[
-                  { mode: 'standard', title: 'Standard Dial Alignment', desc: '1:1 ratio baseline calibration for earthly gravity patterns.' },
-                  { mode: 'orbital', title: 'Orbital Compensation', desc: 'Active multi-axis rotation tracking for atmospheric layers.' },
-                  { mode: 'high-torque', title: 'High-Torque Coupling', desc: 'Maximum friction suppression targeting extreme kinetic environments.' }
+                  { mode: 'standard', title: 'Standard Dial Alignment', desc: 'Baseline calibration for gravity.' },
+                  { mode: 'orbital', title: 'Orbital Compensation', desc: 'Active multi-axis rotation tracking.' },
+                  { mode: 'high-torque', title: 'High-Torque Coupling', desc: 'Maximum friction suppression.' }
                 ].map((item) => {
                   const isSel = calibrationMode === item.mode;
                   return (
                     <div
                       key={item.mode}
                       onClick={() => setCalibrationMode(item.mode as any)}
-                      className={`p-3.5 rounded-xl border cursor-pointer transition-all duration-300 flex items-start gap-3 ${
+                      className={`p-2 sm:p-3 rounded-xl border cursor-pointer transition-all duration-300 flex items-center justify-between gap-3 ${
                         isSel 
                           ? 'bg-cyan-500/5 border-cyan-400/40 text-cyan-300' 
                           : 'bg-white/[0.005] border-white/5 text-zinc-400 hover:border-white/10 hover:bg-white/[0.01]'
                       }`}
                     >
-                      <div className={`w-3.5 h-3.5 rounded-full border flex items-center justify-center shrink-0 mt-0.5 ${
-                        isSel ? 'border-cyan-400 bg-cyan-400' : 'border-zinc-700'
-                      }`}>
-                        {isSel && <div className="w-1.5 h-1.5 rounded-full bg-black" />}
+                      <div className="flex items-center gap-2.5">
+                        <div className={`w-3 h-3 rounded-full border flex items-center justify-center shrink-0 ${
+                          isSel ? 'border-cyan-400 bg-cyan-400' : 'border-zinc-700'
+                        }`}>
+                          {isSel && <div className="w-1.5 h-1.5 rounded-full bg-black" />}
+                        </div>
+                        <span className="text-[11px] sm:text-xs font-semibold font-display text-white">{item.title}</span>
                       </div>
-                      <div className="flex flex-col gap-0.5">
-                        <span className="text-xs font-semibold font-display text-white">{item.title}</span>
-                        <span className="text-[10px] text-zinc-500 leading-normal">{item.desc}</span>
-                      </div>
+                      <span className="hidden leading-normal sm:block text-[9px] sm:text-[10px] text-zinc-500">{item.desc}</span>
                     </div>
                   );
                 })}
@@ -687,27 +691,27 @@ export default function App() {
         {/* =========================================================================
             PAGE 7: CELESTIAL ALIGNMENT (NEW)
             ========================================================================= */}
-        <section className="w-full h-screen flex items-center justify-end p-8 md:p-24 relative overflow-hidden">
-          <div className="sec7-content max-w-xl w-full flex flex-col gap-6 relative z-10 opacity-0 transform translate-x-[80px] pointer-events-auto">
-            <div className="flex flex-col gap-2">
-              <div className="inline-block px-3 py-1 border border-cyan-500/30 bg-cyan-500/5 rounded-full w-fit">
-                <span className="text-[9px] uppercase tracking-[0.2em] text-cyan-400 font-semibold">Astral Complications // 006</span>
+        <section className="w-full h-screen flex flex-col md:flex-row items-center justify-end p-6 md:p-24 relative overflow-hidden">
+          <div className="sec7-content max-w-lg w-full flex flex-col gap-3.5 sm:gap-5 relative z-10 opacity-0 transform translate-x-[80px] pointer-events-auto text-center md:text-left items-center md:items-start mb-6 md:mb-0">
+            <div className="flex flex-col gap-1.5 items-center md:items-start text-balance">
+              <div className="inline-block px-2.5 py-0.5 md:px-3 md:py-1 border border-cyan-500/30 bg-cyan-500/5 rounded-full w-fit">
+                <span className="text-[8px] md:text-[9px] uppercase tracking-[0.2em] text-cyan-400 font-semibold">Astral Complications // 006</span>
               </div>
-              <h2 className="heading-hover-effect font-display text-3xl md:text-5xl font-bold text-white tracking-tight w-fit">
+              <h2 className="heading-hover-effect font-display text-2xl sm:text-3xl md:text-5xl font-bold text-white tracking-tight">
                 Celestial Lunar Synchronization
               </h2>
             </div>
 
-            <p className="text-xs md:text-sm text-zinc-400 font-light leading-relaxed">
+            <p className="text-xs md:text-sm text-zinc-400 font-light leading-relaxed max-w-sm md:max-w-md text-balance hidden sm:block">
               Equipped with a custom lunar tracking complication module. This gears alignment adjusts focal drift based on real-time orbital distances to maintain chronological harmony.
             </p>
 
             {/* Slider complication deck */}
-            <div className="p-5 glass-panel rounded-2xl flex flex-col gap-3.5 pointer-events-auto border-glow-cyan shadow-[0_0_25px_rgba(0,243,255,0.08)]">
-              <div className="flex items-center justify-between font-mono text-[10px]">
-                <div className="flex items-center gap-2">
-                  <Moon className="w-4 h-4 text-cyan-300 animate-bounce" />
-                  <span className="text-zinc-100 font-bold text-glow">Lunar Eccentricity focal</span>
+            <div className="p-4 sm:p-5 glass-panel rounded-2xl flex flex-col gap-3 sm:gap-3.5 pointer-events-auto border-glow-cyan shadow-[0_0_25px_rgba(0,243,255,0.08)] w-full text-left">
+              <div className="flex items-center justify-between font-mono text-[9px] sm:text-[10px]">
+                <div className="flex items-center gap-1.5 sm:gap-2">
+                  <Moon className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-cyan-300 animate-bounce" />
+                  <span className="text-zinc-[110] font-bold text-glow">Lunar Eccentricity</span>
                 </div>
                 <span className="text-cyan-400 font-extrabold text-glow">{lunarDrift}° Offset</span>
               </div>
@@ -718,16 +722,16 @@ export default function App() {
                 max="180"
                 value={lunarDrift}
                 onChange={(e) => setLunarDrift(parseInt(e.target.value))}
-                className="w-full h-1 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-cyan-400"
+                className="w-full h-1 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-cyan-400 my-1 sm:my-0"
               />
 
-              <div className="grid grid-cols-2 gap-2 text-center text-[9px] font-mono whitespace-nowrap pt-1">
-                <div className="bg-white/[0.015] border border-white/5 p-2 rounded-lg">
-                  <span className="opacity-50 block uppercase">Calculated Apex</span>
+              <div className="grid grid-cols-2 gap-2 text-center text-[8px] sm:text-[9px] font-mono whitespace-nowrap pt-0.5">
+                <div className="bg-white/[0.015] border border-white/5 p-1.5 sm:p-2 rounded-lg">
+                  <span className="opacity-50 block uppercase text-[7px] sm:text-[9px]">Calculated Apex</span>
                   <span className="text-white block font-semibold mt-0.5">{(lunarDrift * 2.3).toFixed(1)} km RAD</span>
                 </div>
-                <div className="bg-white/[0.015] border border-white/5 p-2 rounded-lg">
-                  <span className="opacity-50 block uppercase">Syntonic Error</span>
+                <div className="bg-white/[0.015] border border-white/5 p-1.5 sm:p-2 rounded-lg">
+                  <span className="opacity-50 block uppercase text-[7px] sm:text-[9px]">Syntonic Error</span>
                   <span className="text-white block font-semibold mt-0.5">{(0.00012 * lunarDrift).toFixed(5)} % MAX</span>
                 </div>
               </div>
@@ -738,39 +742,39 @@ export default function App() {
         {/* =========================================================================
             PAGE 8: AUDIO-REACTIVE SOUL CORE (200vh - 300vh)
             ========================================================================= */}
-        <section className="w-full h-screen flex items-center justify-start p-8 md:p-24 relative overflow-hidden">
-          <div className="sec8-content max-w-xl w-full flex flex-col gap-6 relative z-10 opacity-0 transform translate-x-[-80px] pointer-events-auto">
-            <div className="flex flex-col gap-2">
-              <div className="inline-block px-3 py-1 border border-cyan-500/30 bg-cyan-500/5 rounded-full w-fit">
-                <span className="text-[9px] uppercase tracking-[0.2em] text-cyan-400 font-semibold">Sonic Alignment // 007</span>
+        <section className="w-full h-screen flex flex-col md:flex-row items-center justify-end md:justify-start p-6 md:p-24 relative overflow-hidden">
+          <div className="sec8-content max-w-lg w-full flex flex-col gap-3.5 sm:gap-5 relative z-10 opacity-0 transform translate-x-[-80px] pointer-events-auto text-center md:text-left items-center md:items-start mb-6 md:mb-0">
+            <div className="flex flex-col gap-1.5 items-center md:items-start text-balance">
+              <div className="inline-block px-2.5 py-0.5 md:px-3 md:py-1 border border-cyan-500/30 bg-cyan-500/5 rounded-full w-fit">
+                <span className="text-[8px] md:text-[9px] uppercase tracking-[0.2em] text-cyan-400 font-semibold">Sonic Alignment // 007</span>
               </div>
-              <h2 className="heading-hover-effect font-display text-3xl md:text-5xl font-bold text-white tracking-tight w-fit">
+              <h2 className="heading-hover-effect font-display text-2xl sm:text-3xl md:text-5xl font-bold text-white tracking-tight">
                 Harmonic Oscillation Core
               </h2>
             </div>
 
-            <p className="text-xs md:text-sm text-zinc-400 font-light leading-relaxed">
+            <p className="text-xs md:text-sm text-zinc-400 font-light leading-relaxed max-w-sm md:max-w-md text-balance text-center sm:text-left md:text-left hidden sm:block">
               Witness acoustic vibration synchronization. Activating core frequencies below transmits audio-reactive pulse measurements right through the gears balance cage.
             </p>
 
-            <div className="glass-panel p-5 rounded-2xl flex flex-col gap-4 pointer-events-auto">
+            <div className="glass-panel p-4 sm:p-5 rounded-2xl flex flex-col gap-3 sm:gap-4 pointer-events-auto w-full text-left">
               {/* =========================================================================
                   AUDIO INTEG BUTTON & GRAPHIC WAVE EQUALIZER DISPLAY
                   ========================================================================= */}
-              <div className="flex flex-col gap-3">
-                <div className="flex items-center justify-between">
+              <div className="flex flex-col gap-2.5 sm:gap-3">
+                <div className="flex items-center justify-between gap-4">
                   <div className="flex flex-col">
-                    <span className="font-mono text-[9px] text-cyan-400 font-extrabold tracking-widest uppercase text-glow">
+                    <span className="font-mono text-[8px] sm:text-[9px] text-cyan-400 font-extrabold tracking-widest uppercase text-glow">
                       SONIC FEEDBACK
                     </span>
-                    <span className="font-display text-xs text-zinc-100 font-semibold">
+                    <span className="font-display text-[10px] sm:text-xs text-zinc-100 font-semibold">
                       Audio-Reactive Kinetic Engine
                     </span>
                   </div>
 
                   <button
                     onClick={handleToggleSound}
-                    className={`px-3.5 py-1.5 rounded-lg font-mono text-[9px] uppercase font-bold tracking-widest flex items-center gap-2 transition-all duration-300 cursor-pointer ${
+                    className={`px-2.5 py-1 sm:px-3.5 sm:py-1.5 rounded-lg font-mono text-[8px] sm:text-[9px] uppercase font-bold tracking-widest flex items-center gap-1.5 sm:gap-2 transition-all duration-300 cursor-pointer ${
                       audioActive
                         ? 'bg-cyan-500 text-black shadow-[0_0_15px_rgba(6,182,212,0.5)] scale-105'
                         : 'bg-white/5 border border-white/10 text-cyan-400 hover:bg-cyan-500/10'
@@ -778,13 +782,13 @@ export default function App() {
                   >
                     {audioActive ? (
                       <>
-                        <Volume2 className="w-3.5 h-3.5 animate-bounce" />
+                        <Volume2 className="w-3 h-3 sm:w-3.5 sm:h-3.5 animate-bounce" />
                         ACTIVE
                       </>
                     ) : (
                       <>
-                        <VolumeX className="w-3.5 h-3.5" />
-                        ACTIVATE CORES
+                        <VolumeX className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
+                        ACTIVATE
                       </>
                     )}
                   </button>
@@ -800,11 +804,11 @@ export default function App() {
         {/* =========================================================================
             PAGE 9: SECURE RESERVATION CARD (DECK FINISH OUT)
             ========================================================================= */}
-        <section className="w-full h-screen flex items-center justify-end p-8 md:p-24 relative overflow-hidden">
-          <div className="sec9-content max-w-md w-full relative z-10 opacity-0 transform translate-x-[100px] pointer-events-auto">
+        <section className="w-full h-screen flex flex-col md:flex-row items-center justify-end p-6 md:p-24 relative overflow-hidden">
+          <div className="sec9-content max-w-md w-full relative z-10 opacity-0 transform translate-x-[100px] pointer-events-auto mb-4 sm:mb-0">
             
             {/* The pre-order custom visual glass wrapper card */}
-            <div className="backdrop-blur-[45px] bg-white/[0.04] border border-cyan-400/30 p-6 md:p-8 rounded-2xl w-full pointer-events-auto shadow-[0_0_50px_rgba(0,243,255,0.18)] flex flex-col gap-5">
+            <div className="backdrop-blur-[45px] bg-white/[0.04] border border-cyan-400/30 p-4 sm:p-6 md:p-8 rounded-2xl w-full pointer-events-auto shadow-[0_0_50px_rgba(0,243,255,0.18)] flex flex-col gap-4 sm:gap-5">
               
               <div className="flex flex-col gap-2">
                 <div className="flex justify-between items-center">

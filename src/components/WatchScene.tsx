@@ -26,6 +26,8 @@ interface WatchSceneProps {
 
 function MainWatch({ scrollParams, mouseCoords }: WatchSceneProps) {
   const masterGroupRef = useRef<THREE.Group>(null);
+  const { size } = useThree();
+  const isMobile = size.width < 768;
   
   // Layer Refs
   const glassRef = useRef<THREE.Mesh>(null);
@@ -71,17 +73,35 @@ function MainWatch({ scrollParams, mouseCoords }: WatchSceneProps) {
     const targetTiltX = mouseCoords.current.y * 0.35;
     const targetTiltY = mouseCoords.current.x * 0.35;
 
+    // Determine responsive slide position vectors
+    let targetX = scrollParams.current.positionX + floatX;
+    let targetY = scrollParams.current.positionY + floatY;
+
+    if (isMobile) {
+      targetX = 0 + floatX * 0.4;
+      const prog = scrollParams.current.progress;
+      if (prog < 0.12) {
+        const t = Math.min(1, prog / 0.12);
+        targetY = THREE.MathUtils.lerp(0.05, 0.85, t) + floatY * 0.4;
+      } else if (prog > 0.86) {
+        const t = Math.min(1, (prog - 0.86) / 0.14);
+        targetY = THREE.MathUtils.lerp(0.85, 0.72, t) + floatY * 0.4;
+      } else {
+        targetY = 0.85 + floatY * 0.4;
+      }
+    }
+
     // 5. Apply Core Transform and Interpolation
     if (masterGroupRef.current) {
       // Rotate and Position Master Group smoothly
       masterGroupRef.current.position.x = THREE.MathUtils.lerp(
         masterGroupRef.current.position.x, 
-        scrollParams.current.positionX + floatX, 
+        targetX, 
         0.08
       );
       masterGroupRef.current.position.y = THREE.MathUtils.lerp(
         masterGroupRef.current.position.y, 
-        scrollParams.current.positionY + floatY, 
+        targetY, 
         0.08
       );
       masterGroupRef.current.position.z = THREE.MathUtils.lerp(
@@ -89,6 +109,12 @@ function MainWatch({ scrollParams, mouseCoords }: WatchSceneProps) {
         scrollParams.current.positionZ, 
         0.08
       );
+
+      // Smoothly animate responsive scaling of the model
+      const targetScale = isMobile ? 0.72 : 1.0;
+      masterGroupRef.current.scale.x = THREE.MathUtils.lerp(masterGroupRef.current.scale.x, targetScale, 0.08);
+      masterGroupRef.current.scale.y = THREE.MathUtils.lerp(masterGroupRef.current.scale.y, targetScale, 0.08);
+      masterGroupRef.current.scale.z = THREE.MathUtils.lerp(masterGroupRef.current.scale.z, targetScale, 0.08);
 
       // Blend GSAP scroll target rotation with absolute mouse pointer feedback
       const targetRotX = scrollParams.current.rotationX + targetTiltX;
