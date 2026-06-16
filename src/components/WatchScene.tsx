@@ -78,17 +78,32 @@ function MainWatch({ scrollParams, mouseCoords }: WatchSceneProps) {
     let targetY = scrollParams.current.positionY + floatY;
 
     if (isMobile) {
-      targetX = 0 + floatX * 0.4;
-      const prog = scrollParams.current.progress;
-      if (prog < 0.12) {
-        const t = Math.min(1, prog / 0.12);
-        targetY = THREE.MathUtils.lerp(0.05, 0.85, t) + floatY * 0.4;
-      } else if (prog > 0.86) {
-        const t = Math.min(1, (prog - 0.86) / 0.14);
-        targetY = THREE.MathUtils.lerp(0.85, 0.72, t) + floatY * 0.4;
+      // Keep model horizontally centered on narrow mobile screens (with an active sway)
+      targetX = 0 + floatX * 0.45;
+
+      // Dynamic 9-step mobile trajectory path synchronized perfectly with the scroll sections
+      const p = scrollParams.current.progress;
+      const MOBILE_Y_VALUES = [0.78, 0.84, 0.45, 0.82, 0.58, 0.84, 0.65, 0.40, 0.88];
+      let calculatedY = 0.78;
+
+      if (p <= 0) {
+        calculatedY = 0.78;
+      } else if (p >= 1) {
+        calculatedY = 0.88;
       } else {
-        targetY = 0.85 + floatY * 0.4;
+        const segmentIndex = Math.min(Math.floor(p / 0.125), 7);
+        const startSegmentProg = segmentIndex * 0.125;
+        const startY = MOBILE_Y_VALUES[segmentIndex];
+        const endY = MOBILE_Y_VALUES[segmentIndex + 1];
+        
+        // Normalize scroll progress within the active section segment [0.0 to 1.0]
+        const t = (p - startSegmentProg) / 0.125;
+        // Apply Hermite smoothstep spline easing for ultra-fluid momentum
+        const smoothT = t * t * (3 - 2 * t);
+        calculatedY = THREE.MathUtils.lerp(startY, endY, smoothT);
       }
+      
+      targetY = calculatedY + floatY * 0.45;
     }
 
     // 5. Apply Core Transform and Interpolation
@@ -111,7 +126,9 @@ function MainWatch({ scrollParams, mouseCoords }: WatchSceneProps) {
       );
 
       // Smoothly animate responsive scaling of the model
-      const targetScale = isMobile ? 0.72 : 1.0;
+      const targetScale = isMobile 
+        ? 0.62 + (scrollParams.current.positionZ * 0.06) 
+        : 1.0;
       masterGroupRef.current.scale.x = THREE.MathUtils.lerp(masterGroupRef.current.scale.x, targetScale, 0.08);
       masterGroupRef.current.scale.y = THREE.MathUtils.lerp(masterGroupRef.current.scale.y, targetScale, 0.08);
       masterGroupRef.current.scale.z = THREE.MathUtils.lerp(masterGroupRef.current.scale.z, targetScale, 0.08);

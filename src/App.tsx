@@ -77,13 +77,19 @@ export default function App() {
 
   // Initialize Lenis Smooth Scroll Physics
   useEffect(() => {
+    const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent
+    ) || (window.innerWidth < 768);
+
     const lenis = new Lenis({
-      duration: 1.8,
+      duration: isMobileDevice ? 0.95 : 1.6, // Snappier touch response for rapid feedback
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Luxurious exponential momentum curve
       orientation: 'vertical',
       gestureOrientation: 'vertical',
       smoothWheel: true,
-      wheelMultiplier: 1.02,
+      wheelMultiplier: 1.05, // uniform scroll speed index across touch and trackpad entries
+      syncTouch: true, // critical: coordinates touch inputs with requestAnimationFrame loop
+      touchMultiplier: isMobileDevice ? 0.85 : 1.0, // organic friction damping for stable tactile scroll control
     });
 
     const updateLenis = (time: number) => {
@@ -144,7 +150,7 @@ export default function App() {
       }, 0.5)
       // Watch parameters transform: subtle offset tilt (glides seamlessly over the full step 0.0 -> 1.0)
       .to(scrollParams.current, {
-        positionX: -1.7,
+        positionX: 1.7,
         positionY: 0.1,
         positionZ: 0.5,
         rotationX: 0.95,
@@ -228,7 +234,7 @@ export default function App() {
       // --- PAGE 5 to PAGE 6 (Time 4.0 -> 5.0) ---
       // Watch parameters transform: Symmetrical front face view (seamless glide 4.0 -> 5.0)
       tl.to(scrollParams.current, {
-        positionX: -2.0,
+        positionX: 2.0,
         positionY: -0.1,
         positionZ: 1.2,
         rotationX: 0,
@@ -249,7 +255,7 @@ export default function App() {
       // --- PAGE 6 to PAGE 7 (Time 5.0 -> 6.0) ---
       // Watch parameters transform: Stellar moonphase rotation angles (seamless glide 5.0 -> 6.0)
       tl.to(scrollParams.current, {
-        positionX: 1.7,
+        positionX: -1.7,
         positionY: 0.25,
         positionZ: 0.5,
         rotationX: -0.85,
@@ -270,7 +276,7 @@ export default function App() {
       // --- PAGE 7 to PAGE 8 (Time 6.0 -> 7.0) ---
       // Watch parameters transform: Audio feedback centered focus (seamless glide 6.0 -> 7.0)
       tl.to(scrollParams.current, {
-        positionX: 0.0,
+        positionX: 1.5,
         positionY: -1.4,
         positionZ: 2.3,
         rotationX: 0.82,
